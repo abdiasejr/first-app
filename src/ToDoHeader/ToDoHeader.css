@@ -1,0 +1,19 @@
+.toDoHeader {
+    align-self: flex-start;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 700;
+    color: white;
+    padding: 0.3rem 0 0 0.3rem;
+}
+
+
+.toDoHeader a {
+    text-transform: none;
+    color: white;
+    text-decoration: none;
+}
+
+.toDoHeader a:hover {
+    color: #fb8b24;
+}

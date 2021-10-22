@@ -1,0 +1,11 @@
+.toDoTitle {
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+.toDoCount {
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.561);
+}
