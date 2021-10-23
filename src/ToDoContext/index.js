@@ -1,5 +1,5 @@
 import { useState, createContext } from "react";
-import { useLocalStorage } from "../customHooks/useLocalStorage";
+import { useLocalStorage } from "../CustomHooks/useLocalStorage";
 
 const ToDoContext = createContext();
 

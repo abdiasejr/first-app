@@ -30,7 +30,7 @@
 }
 
 .toDoCompleted {
-    text-decoration: line-through #e36414; 
+    text-decoration: 0.17rem line-through #e36414;
 }
 
 .toDoDelete {

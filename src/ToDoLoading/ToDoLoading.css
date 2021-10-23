@@ -1,0 +1,33 @@
+.toDoLoadingContainer {
+    width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 1.2rem;
+}
+
+.toDoItemLoading {
+    width: 100%;
+    height: 3.9rem;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    background-color: #22223b;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg, #22223b, #22223b88);
+    background-size: 400% 400%;
+    animation: loadingAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
