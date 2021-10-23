@@ -1,22 +1,25 @@
 import { useState, createContext } from "react";
 import { useLocalStorage } from "../CustomHooks/useLocalStorage";
 
+// Contexto de React para usar nuestro componente provider en diferentes contextos
 const ToDoContext = createContext();
 
+// Proveedor de las props de nuestro proyecto..
 function ToDoProvider(props){
     const {
         item: toDos,
-        saveItem: saveToDos,
+        saveItem: saveToDos, // Para actualizar en caso de exista nuevos toDos en el localStorage
         loading,
         error,
-      } = useLocalStorage("TODOS_V1", []);
-    
+      } = useLocalStorage("TODOS_V1", []); //Para guardar en el localStorage con un key, los datos que queremos guardar en un primera estancia, esta vacio..
+      
+      // Variables "escuchar" y avisar a react cuando nuestros datos hayan cambiado
       const [searchValue, setSearchValue] = useState("");
       const [openModal, setOpenModal] = useState(false);
-
+      // Variable para guardar los ToDo "hechos", y el total de ToDos
       const completedToDos = toDos.filter((toDo) => !!toDo.completed).length;
       const totalToDos = toDos.length;
-    
+      // Nos servirá para guardar los toDo buscados
       let searchedToDos = [];
     
       if (!searchValue.length >= 1) {

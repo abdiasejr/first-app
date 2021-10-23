@@ -5,15 +5,16 @@ import { ToDoCounter } from "../ToDoCounter";
 import { ToDoSearch } from "../ToDoSearch";
 import { ToDoList } from "../ToDoList";
 import { ToDoItem } from "../ToDoItem";
-import { CreateToDoButtom } from "../CreateToDoButtom";
 import { Modal } from "../Modal"
 import { ToDoForm} from "../ToDoForm";
 import { ToDoError } from "../ToDoError"
 import { ToDoLoading } from "../ToDoLoading";
 import { EmptyToDos } from "../EmptyToDos"
-
+import { CreateToDoButtom } from "../CreateToDoButtom";
+import { ToDoFooter } from "../ToDoFooter";
 
 function AppUI() {
+  // Destructuring para tomar las variables de nuestro contexto de que vamos a utilizar
   const { 
     error, 
     loading, 
@@ -24,6 +25,7 @@ function AppUI() {
   } = useContext(ToDoContext);
 
   return (
+    // Render de nuestro componentes o más bien los retorna cuando sean solicitados para renderizar en el dom
     <React.Fragment>
       <ToDoHeader />
       <ToDoCounter />
@@ -49,6 +51,7 @@ function AppUI() {
         </Modal>
       )}
       <CreateToDoButtom />
+      <ToDoFooter />
     </React.Fragment>
   );
 }

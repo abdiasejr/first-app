@@ -1,0 +1,26 @@
+.toDoFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 5rem;
+    color: rgba(255, 255, 255, 0.561);
+}
+
+.toDoFooter a {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.561);
+    text-decoration: none;
+    text-transform: none;
+}
+
+.toDoFooter a:hover {
+    color: white;
+}
+
+.toDoFooter a:last-child{
+    display: flex;
+    font-size: 1.4rem;
+}
