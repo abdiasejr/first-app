@@ -1,0 +1,82 @@
+.toDoFormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+} 
+
+.toDoForm {
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    box-sizing: border-box;
+    max-width: 540px;
+    background-color: white;
+    border-radius: 0.3rem;
+}
+
+.toDoLabel {
+    color: #22223b;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.toDoTextArea {
+    width: 85%;
+    font-size: 1.2rem;
+    color: #22223b;
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    transition: .3s all;
+}
+
+.toDoTextArea::placeholder {
+    font-size: 1.2rem;
+}
+
+.toDoTextArea:focus {
+    outline: none;
+    border-radius: 0.3rem;
+}
+
+.toDoButtoms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 2rem;
+}
+
+.toDoBtn {
+    width: 25%;
+    outline: none;
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.toDoCancel {
+    color: #22223b;
+}
+.toDoCancel:hover {
+    border-color: #e36414;
+    color: #e36414;
+}
+
+.toDoSubmit {
+    color: #22223b;
+}
+
+.toDoSubmit:hover {
+    color: white;
+    border-color: #70e000;
+    background-color: #70e000;
+}

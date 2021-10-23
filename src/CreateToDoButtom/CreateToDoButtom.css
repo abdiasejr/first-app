@@ -9,9 +9,12 @@
     background-color: #e36414;
     cursor: pointer;
     transition: 300ms;
+    transform: rotate(0);
+    transition: .3s ease;
 }
 
 .createToDo:hover {
+    transform: rotate(224deg);
     color: #fb8b24;
     background-color: #f2e9e4;
 }
