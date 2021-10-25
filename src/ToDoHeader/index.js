@@ -1,12 +1,11 @@
 import React from "react";
-import { SiTodoist } from "react-icons/si"
 import "./ToDoHeader.css"
 
-function ToDoHeader(){
+function ToDoHeader({children}){
     return (
-        <header className="toDoHeader">
-            <a href="index.html"> <SiTodoist /> ToDo Machine </a>
-        </header>
+        <div className="toDoHeaderContainer">
+            {children}
+        </div>
     )
 };
 

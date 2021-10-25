@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
-import { ToDoContext } from "../ToDoContext";
+import React from "react";
 import { BiSearch } from "react-icons/bi";
 import "./ToDoSearch.css"
 
-function ToDoSearch(){
-    const {searchValue, setSearchValue} = useContext(ToDoContext);
+function ToDoSearch({searchValue, setSearchValue}){
 
     const onSearchValueChange = (event) => {
         setSearchValue(event.target.value);

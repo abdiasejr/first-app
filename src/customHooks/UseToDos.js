@@ -1,11 +1,8 @@
-import { useState, createContext } from "react";
-import { useLocalStorage } from "../CustomHooks/useLocalStorage";
-
-// Contexto de React para usar nuestro componente provider en diferentes contextos
-const ToDoContext = createContext();
+import { useState } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
 // Proveedor de las props de nuestro proyecto..
-function ToDoProvider(props){
+function useToDos(){
     const {
         item: toDos,
         saveItem: saveToDos, // Para actualizar en caso de exista nuevos toDos en el localStorage
@@ -54,8 +51,7 @@ function ToDoProvider(props){
         newTodos.splice(toDoIndex, 1);
         saveToDos(newTodos);
       };
-    return (
-      <ToDoContext.Provider value={{
+    return ({
         error,
         loading,
         completedToDos,
@@ -68,11 +64,8 @@ function ToDoProvider(props){
         deleteToDo,
         openModal,
         setOpenModal,
-      }}>
-          {props.children}
-      </ToDoContext.Provider>
-    );
+    });
 }
 
 
-export { ToDoContext, ToDoProvider}
+export { useToDos }

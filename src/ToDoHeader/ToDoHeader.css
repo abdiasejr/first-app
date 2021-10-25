@@ -1,3 +1,11 @@
+.toDoHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .toDoHeader {
     align-self: flex-start;
     font-size: 1.2rem;

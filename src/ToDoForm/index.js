@@ -1,12 +1,9 @@
-import React, { useContext, useState } from "react";
-import { ToDoContext } from "../ToDoContext";
+import React, { useState } from "react";
 import "./ToDoForm.css"
 
-function ToDoForm(){
+function ToDoForm({ addToDo, setOpenModal }){
 
     const [newToDoValue, setNewToDoValue] = useState('')
-
-    const { addToDo, setOpenModal } =  useContext(ToDoContext);
 
     const onChange = (event) => {
         setNewToDoValue(event.target.value);
@@ -16,7 +13,7 @@ function ToDoForm(){
     };
     const onSubmit = (event) => {
         event.preventDefault();
-        let flag = newToDoValue.split(' ').every(word => word.length<25);
+        let flag = newToDoValue.split(' ').every(word => word.length<30);
         if(newToDoValue && flag) addToDo(newToDoValue);
         setOpenModal(prevState => !prevState)
     };
