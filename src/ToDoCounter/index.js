@@ -1,12 +1,12 @@
 import React from "react";
 import "./ToDoCounter.css";
 
-function ToDoCounter({completedToDos, totalToDos}) {
+function ToDoCounter({completedToDos, totalToDos, loading}) {
   return (
     <div>
-      <h1 className="toDoTitle"> TODOs </h1>
-      <h2 className="toDoCount">
-        You has completed {completedToDos} of {totalToDos} tasks
+      <h1 className={`toDoTitle ${loading && 'toDoTitleLoading'}`}> TODOs </h1>
+      <h2 className={`toDoCount ${loading && 'toDoCountLoading'}`}>
+        You has completed {(loading && '. . .') || completedToDos} of {totalToDos || '. . .'} tasks
       </h2>
     </div>
   );

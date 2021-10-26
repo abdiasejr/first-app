@@ -34,25 +34,35 @@ function App() {
   return (
     // Render de nuestro componentes o más bien los retorna cuando sean solicitados para renderizar en el dom
     <React.Fragment>
-      <ToDoHeader>
+      <ToDoHeader >
         <header className="toDoHeader">
             <a href="index.html"> <SiTodoist /> ToDo Machine </a>
         </header>
         <ToDoCounter 
           totalToDos={totalToDos}
           completedToDos={completedToDos}
+          loading={loading}
         />
         <ToDoSearch 
           searchValue={searchValue}
           setSearchValue={setSearchValue}
+          loading={loading}
         />
       </ToDoHeader>
-      <ToDoList>
-        {error && <ToDoError />}
-        {loading && <ToDoLoading />}
-        {!loading && !searchedToDos.length && <EmptyToDos />}
+      <ToDoList 
+        
+        error={error}
+        loading={loading}
+        searchedToDos={searchedToDos}
+        totalToDos={totalToDos}
+        searchValue={searchValue}
 
-        {searchedToDos.map((toDo) => (
+        onError={() => <ToDoError />}
+        onLoading={() => <ToDoLoading />}
+        onEmpty={() => <EmptyToDos />}
+        onEmptySearch={(searchText) => (<p>There's no results for {searchText}</p>)}
+      >
+        {toDo => (
           <ToDoItem
             text={toDo.text}
             completed={toDo.completed}
@@ -60,7 +70,7 @@ function App() {
             onComplete={() => toggleCompleteToDo(toDo.text)}
             onDelete={() => deleteToDo(toDo.text)}
           />
-        ))}
+        )}
       </ToDoList>
       {!!openModal && (
         <Modal>

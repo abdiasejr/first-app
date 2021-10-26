@@ -21,9 +21,32 @@
     font-size: 1.2rem;
 }
 
+.toDoSearchDisabled {
+    background: linear-gradient(90deg, #22223b, #22223b88);
+    background-size: 400% 400%;
+    animation: loadingAnimation 1.5s ease-in-out infinite;
+}
+.toDoSearch:disabled {
+    opacity: 0%;
+}
+
+.toDoSearch:disabled ~ .toDoSearchIcon {
+    opacity: 25%;
+}
+
 .toDoSearch::placeholder {
     color: rgba(255, 255, 255, 0.561);;
     font-family: 'Nunito', sans-serif;
 }
 
-
+@keyframes loadingAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

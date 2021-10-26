@@ -4,8 +4,16 @@
     font-style: italic;
 }
 
+.toDoTitleLoading {
+    opacity: 25%;
+}
+
 .toDoCount {
     text-align: center;
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.561);
+}
+
+.toDoCountLoading {
+    opacity: 25%;
 }
