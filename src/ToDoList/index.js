@@ -12,7 +12,7 @@ function ToDoList({children, error, loading, onError, searchedToDos, onLoading, 
                 {loading && onLoading()}
                 {(!loading && !totalToDos) && onEmpty()}
                 {(!!totalToDos && !searchedToDos.length) && onEmptySearch(searchValue)}
-                {searchedToDos.map(renderFn)}
+                {(!loading) && searchedToDos.map(renderFn)}
             </ul>
         </section>
     )

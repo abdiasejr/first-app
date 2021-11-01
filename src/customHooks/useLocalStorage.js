@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 function useLocalStorage(itemName, initialValue) {
+  const [sincronizedItem, setSincronizedItem] = useState(true);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   // Aqui usaremos el estado para observar los cambios y avisar a react de un nuevoItem
@@ -23,11 +24,12 @@ function useLocalStorage(itemName, initialValue) {
         // Actualizar ultima data como el item actual
         setItem(parsedItem);
         setLoading(false);
+        setSincronizedItem(false);
       } catch (error) {
         setError(error);
       }
     }, 3000);
-  });
+  }, [sincronizedItem]);
 
   const saveItem = (newItem) => {
     try {
@@ -41,11 +43,16 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
+  const sincronize = () => {
+    setSincronizedItem(true);
+    setLoading(true);
+  };
   return {
     item,
     saveItem,
     loading,
     error,
+    sincronize,
   };
 }
 

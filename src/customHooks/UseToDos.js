@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BiWindows } from "react-icons/bi";
 import { useLocalStorage } from "./useLocalStorage";
 
 // Proveedor de las props de nuestro proyecto..
@@ -8,6 +9,7 @@ function useToDos(){
         saveItem: saveToDos, // Para actualizar en caso de exista nuevos toDos en el localStorage
         loading,
         error,
+        sincronize,
       } = useLocalStorage("TODOS_V1", []); //Para guardar en el localStorage con un key, los datos que queremos guardar en un primera estancia, esta vacio..
       
       // Variables "escuchar" y avisar a react cuando nuestros datos hayan cambiado
@@ -51,6 +53,9 @@ function useToDos(){
         newTodos.splice(toDoIndex, 1);
         saveToDos(newTodos);
       };
+
+      window.addEventListener("storage", sincronize);
+
     return ({
         error,
         loading,

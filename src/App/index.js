@@ -12,7 +12,7 @@ import { ToDoLoading } from "../ToDoLoading";
 import { EmptyToDos } from "../EmptyToDos"
 import { CreateToDoButtom } from "../CreateToDoButtom";
 import { ToDoFooter } from "../ToDoFooter";
-import { SiTodoist } from "react-icons/si"
+import { SiTodoist } from "react-icons/si";
 
 function App() {
 
